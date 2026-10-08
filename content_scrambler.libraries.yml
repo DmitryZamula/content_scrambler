@@ -1,0 +1,7 @@
+logo:
+  js:
+    js/content_scrambler.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/once

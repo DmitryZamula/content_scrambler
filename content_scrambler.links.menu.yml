@@ -1,0 +1,17 @@
+content_scrambler.overview:
+  title: 'Content Scrambler'
+  description: 'Convert existing content to Lorem Ipsum.'
+  parent: system.admin_config_development
+  route_name: content_scrambler.overview
+
+content_scrambler.content:
+  title: 'Convert by content types'
+  description: 'Choose entity types, bundles and fields to convert, and set the logo.'
+  parent: content_scrambler.overview
+  route_name: content_scrambler.content
+
+content_scrambler.field:
+  title: 'Convert by field'
+  description: 'Convert a single field by its machine name.'
+  parent: content_scrambler.overview
+  route_name: content_scrambler.field

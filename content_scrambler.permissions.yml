@@ -1,0 +1,4 @@
+administer content scrambler:
+  title: 'Administer Content Scrambler'
+  description: 'Convert site content to Lorem Ipsum. Destructive: overwrites stored content.'
+  restrict access: true

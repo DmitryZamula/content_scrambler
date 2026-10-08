@@ -1,0 +1,2 @@
+logo_fid: 0
+logo_selector: '.site-branding__logo img, .site-logo img, .site-branding img, .logo img, img.logo, a.logo img, .navbar-brand img'

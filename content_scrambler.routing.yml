@@ -1,0 +1,23 @@
+content_scrambler.overview:
+  path: '/admin/config/development/content-scrambler'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Content Scrambler'
+  requirements:
+    _permission: 'administer content scrambler'
+
+content_scrambler.content:
+  path: '/admin/config/development/content-scrambler/content'
+  defaults:
+    _form: '\Drupal\content_scrambler\Form\ContentForm'
+    _title: 'Convert by content types'
+  requirements:
+    _permission: 'administer content scrambler'
+
+content_scrambler.field:
+  path: '/admin/config/development/content-scrambler/field'
+  defaults:
+    _form: '\Drupal\content_scrambler\Form\FieldForm'
+    _title: 'Convert by field'
+  requirements:
+    _permission: 'administer content scrambler'

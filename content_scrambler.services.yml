@@ -1,0 +1,11 @@
+services:
+  content_scrambler.lorem:
+    class: Drupal\content_scrambler\LoremIpsumGenerator
+
+  content_scrambler.field_discovery:
+    class: Drupal\content_scrambler\FieldDiscovery
+    arguments: ['@entity_type.manager', '@entity_type.bundle.info', '@entity_field.manager']
+
+  content_scrambler.converter:
+    class: Drupal\content_scrambler\EntityConverter
+    arguments: ['@content_scrambler.lorem']

@@ -1,0 +1,17 @@
+content_scrambler.overview_tab:
+  title: 'Overview'
+  route_name: content_scrambler.overview
+  base_route: content_scrambler.overview
+  weight: 0
+
+content_scrambler.content_tab:
+  title: 'By content types'
+  route_name: content_scrambler.content
+  base_route: content_scrambler.overview
+  weight: 1
+
+content_scrambler.field_tab:
+  title: 'By field'
+  route_name: content_scrambler.field
+  base_route: content_scrambler.overview
+  weight: 2

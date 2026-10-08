@@ -1,0 +1,10 @@
+content_scrambler.settings:
+  type: config_object
+  label: 'Content Scrambler settings'
+  mapping:
+    logo_fid:
+      type: integer
+      label: 'Replacement logo file ID'
+    logo_selector:
+      type: string
+      label: 'CSS selector of logo images'

@@ -1,0 +1,15 @@
+{
+    "name": "drupal/content_scrambler",
+    "type": "drupal-module",
+    "description": "Overwrites stored content (nodes, terms, blocks, media, comments, paragraphs) with Lorem Ipsum of the same length and swaps the site logo. For development and demo copies.",
+    "keywords": ["Drupal", "lorem ipsum", "anonymize", "development"],
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/content_scrambler",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/content_scrambler",
+        "source": "https://git.drupalcode.org/project/content_scrambler"
+    },
+    "require": {
+        "drupal/core": "^11.1"
+    }
+}

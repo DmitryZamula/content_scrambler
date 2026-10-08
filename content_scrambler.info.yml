@@ -1,0 +1,8 @@
+name: 'Content Scrambler'
+type: module
+description: 'Converts existing content (nodes, terms, blocks, paragraphs, media, comments) to Lorem Ipsum and replaces the site logo. For development/demo copies only.'
+package: Development
+core_version_requirement: ^11.1
+dependencies:
+  - drupal:file
+configure: content_scrambler.overview
