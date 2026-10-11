@@ -8,11 +8,11 @@ use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\RevisionableInterface;
 
 /**
- * Overwrites text fields of an entity (all translations) with Lorem Ipsum.
+ * Overwrites text fields of an entity (all translations) with replacement text.
  */
 class EntityConverter {
 
-  public function __construct(protected LoremIpsumGenerator $lorem) {}
+  public function __construct(protected ReplacementTextGenerator $generator) {}
 
   /**
    * Converts the given fields and saves the entity if anything changed.
@@ -52,7 +52,7 @@ class EntityConverter {
             if (!is_string($original) || trim($original) === '') {
               continue;
             }
-            $new = $is_html ? $this->lorem->html($original) : $this->lorem->plain($original);
+            $new = $is_html ? $this->generator->html($original) : $this->generator->plain($original);
             if ($new !== $original) {
               $item->set($property, $new);
               $changed = TRUE;

@@ -31,7 +31,7 @@ class ContentScramblerHooks {
   #[Hook('help')]
   public function help(string $route_name, RouteMatchInterface $route_match): ?string {
     if ($route_name === 'help.page.content_scrambler') {
-      return '<p>' . $this->t('Overwrites stored text (titles, bodies, term names, blocks, paragraphs, ...) with Lorem Ipsum of the same length. <strong>This is irreversible</strong>: use it only on development or demo copies and make a database backup first.') . '</p>';
+      return '<p>' . $this->t('Overwrites stored text (titles, bodies, term names, blocks, paragraphs, ...) with replacement text (Lorem Ipsum by default) of the same length. <strong>This is irreversible</strong>: use it only on development or demo copies and make a database backup first.') . '</p>';
     }
     return NULL;
   }

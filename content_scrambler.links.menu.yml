@@ -1,6 +1,6 @@
 content_scrambler.overview:
   title: 'Content Scrambler'
-  description: 'Convert existing content to Lorem Ipsum.'
+  description: 'Anonymize existing content by replacing it with placeholder text.'
   parent: system.admin_config_development
   route_name: content_scrambler.overview
 

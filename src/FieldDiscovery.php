@@ -9,7 +9,7 @@ use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
- * Finds text fields that can be converted to Lorem Ipsum.
+ * Finds text fields that can be converted to replacement text.
  */
 class FieldDiscovery {
 

@@ -31,7 +31,7 @@ class ConvertBatch {
       return;
     }
     batch_set([
-      'title' => new TranslatableMarkup('Converting existing content to Lorem Ipsum'),
+      'title' => new TranslatableMarkup('Converting existing content to replacement text'),
       'operations' => $operations,
       'finished' => [static::class, 'finished'],
       'progress_message' => new TranslatableMarkup('Processed @current out of @total operations.'),
@@ -101,7 +101,7 @@ class ConvertBatch {
     $messenger = \Drupal::messenger();
     if ($success) {
       $count = $results['processed'] ?? 0;
-      $messenger->addStatus(\Drupal::translation()->formatPlural($count, 'One item converted to Lorem Ipsum.', '@count items converted to Lorem Ipsum.'));
+      $messenger->addStatus(\Drupal::translation()->formatPlural($count, 'One item converted.', '@count items converted.'));
       // Rendered output is now stale.
       \Drupal::service('cache_tags.invalidator')->invalidateTags(['rendered']);
     }

@@ -4,18 +4,44 @@ declare(strict_types=1);
 
 namespace Drupal\content_scrambler;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
+
 /**
- * Generates Lorem Ipsum text of the same length as the original text.
+ * Generates replacement text of the same length as the original text.
  */
-class LoremIpsumGenerator {
+class ReplacementTextGenerator {
 
   /**
-   * Source text, repeated as needed.
+   * Neutral text used only if the configured replacement text is empty.
    */
-  protected const SOURCE = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ';
+  protected const FALLBACK = 'Text ';
 
   /**
-   * Returns Lorem Ipsum of exactly $length characters.
+   * The resolved source text (cached for the lifetime of the service).
+   */
+  protected ?string $source = NULL;
+
+  public function __construct(protected ConfigFactoryInterface $configFactory) {}
+
+  /**
+   * Returns the text used as the source of replacements.
+   *
+   * Uses the replacement text from the settings (the module ships with a
+   * Lorem Ipsum default in its install configuration). Whitespace is
+   * normalized and a trailing space is added so the text can be repeated
+   * seamlessly.
+   */
+  public function getSource(): string {
+    if ($this->source === NULL) {
+      $custom = (string) $this->configFactory->get('content_scrambler.settings')->get('source_text');
+      $custom = trim((string) preg_replace('/\s+/u', ' ', $custom));
+      $this->source = $custom !== '' ? $custom . ' ' : self::FALLBACK;
+    }
+    return $this->source;
+  }
+
+  /**
+   * Returns replacement text of exactly $length characters.
    *
    * @param int $length
    *   Desired length in characters.
@@ -27,7 +53,7 @@ class LoremIpsumGenerator {
     if ($length <= 0) {
       return '';
     }
-    $source = self::SOURCE;
+    $source = $this->getSource();
     $size = mb_strlen($source);
     $offset %= $size;
 

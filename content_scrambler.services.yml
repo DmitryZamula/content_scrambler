@@ -1,6 +1,7 @@
 services:
-  content_scrambler.lorem:
-    class: Drupal\content_scrambler\LoremIpsumGenerator
+  content_scrambler.text_generator:
+    class: Drupal\content_scrambler\ReplacementTextGenerator
+    arguments: ['@config.factory']
 
   content_scrambler.field_discovery:
     class: Drupal\content_scrambler\FieldDiscovery
@@ -8,4 +9,4 @@ services:
 
   content_scrambler.converter:
     class: Drupal\content_scrambler\EntityConverter
-    arguments: ['@content_scrambler.lorem']
+    arguments: ['@content_scrambler.text_generator']

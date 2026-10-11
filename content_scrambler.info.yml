@@ -1,6 +1,6 @@
 name: 'Content Scrambler'
 type: module
-description: 'Converts existing content (nodes, terms, blocks, paragraphs, media, comments) to Lorem Ipsum and replaces the site logo. For development/demo copies only.'
+description: 'Anonymizes local and team development copies of a site by overwriting stored content with replacement text (Lorem Ipsum by default) of the same length. For development and demo copies only.'
 package: Development
 core_version_requirement: ^11.1
 dependencies:

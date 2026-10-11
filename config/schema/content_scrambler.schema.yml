@@ -8,3 +8,6 @@ content_scrambler.settings:
     logo_selector:
       type: string
       label: 'CSS selector of logo images'
+    source_text:
+      type: text
+      label: 'Replacement text'
