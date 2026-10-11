@@ -86,9 +86,9 @@ drush en content_scrambler
    the site*.
 4. **By field:** choose an entity type, enter a bundle and a field machine
    name and press *Convert*.
-5. **Replacement text:** the text that replaces the original content. It
-   defaults to the standard Lorem Ipsum and can be changed on the same form
-   (it is cut to the length of the original and repeated if needed).
+5. **Replacement text:** on its own tab, set the text that replaces the
+   original content. It defaults to the standard Lorem Ipsum (it is cut to the
+   length of the original and repeated if needed).
 6. **Logo:** upload a replacement logo. It is swapped in the browser using the
    CSS selector set on the same form (the default covers Olivero and most
    themes).

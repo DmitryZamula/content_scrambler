@@ -10,8 +10,14 @@ content_scrambler.content_tab:
   base_route: content_scrambler.overview
   weight: 1
 
+content_scrambler.text_tab:
+  title: 'Replacement text'
+  route_name: content_scrambler.text
+  base_route: content_scrambler.overview
+  weight: 2
+
 content_scrambler.field_tab:
   title: 'By field'
   route_name: content_scrambler.field
   base_route: content_scrambler.overview
-  weight: 2
+  weight: 3

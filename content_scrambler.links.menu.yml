@@ -9,9 +9,18 @@ content_scrambler.content:
   description: 'Choose entity types, bundles and fields to convert, and set the logo.'
   parent: content_scrambler.overview
   route_name: content_scrambler.content
+  weight: 1
+
+content_scrambler.text:
+  title: 'Replacement text'
+  description: 'Set the text that replaces the original content.'
+  parent: content_scrambler.overview
+  route_name: content_scrambler.text
+  weight: 2
 
 content_scrambler.field:
   title: 'Convert by field'
   description: 'Convert a single field by its machine name.'
   parent: content_scrambler.overview
   route_name: content_scrambler.field
+  weight: 3

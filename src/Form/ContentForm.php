@@ -88,20 +88,6 @@ class ContentForm extends FormBase {
       }
     }
 
-    $form['text_details'] = [
-      '#type' => 'details',
-      '#title' => $this->t('Replacement text'),
-      '#open' => FALSE,
-    ];
-    $form['text_details']['source_text'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Replacement text'),
-      '#default_value' => $config->get('source_text'),
-      '#rows' => 8,
-      '#required' => TRUE,
-      '#description' => $this->t('Text that replaces the original content. It is cut to the length of the original text and repeated if needed. Line breaks are ignored. The default is the standard Lorem Ipsum.'),
-    ];
-
     $form['logo_details'] = [
       '#type' => 'details',
       '#title' => $this->t('Logo'),
@@ -141,7 +127,7 @@ class ContentForm extends FormBase {
     ];
     $form['actions']['logo_only'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Save settings only'),
+      '#value' => $this->t('Save logo only'),
       '#submit' => ['::submitLogoOnly'],
     ];
 
@@ -186,15 +172,15 @@ class ContentForm extends FormBase {
   }
 
   /**
-   * Submit handler: saves only the settings (text and logo).
+   * Submit handler: saves only the logo settings.
    */
   public function submitLogoOnly(array &$form, FormStateInterface $form_state): void {
     $this->saveLogo($form_state);
-    $this->messenger()->addStatus($this->t('Settings saved.'));
+    $this->messenger()->addStatus($this->t('Logo settings saved.'));
   }
 
   /**
-   * Stores the replacement text, logo file and selector in config.
+   * Stores the logo file and selector in config.
    */
   protected function saveLogo(FormStateInterface $form_state): void {
     $config = $this->configFactory()->getEditable('content_scrambler.settings');
@@ -216,7 +202,6 @@ class ContentForm extends FormBase {
     $config
       ->set('logo_fid', $new)
       ->set('logo_selector', (string) $form_state->getValue('logo_selector'))
-      ->set('source_text', trim((string) $form_state->getValue('source_text')))
       ->save();
   }
 

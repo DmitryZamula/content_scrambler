@@ -14,6 +14,14 @@ content_scrambler.content:
   requirements:
     _permission: 'administer content scrambler'
 
+content_scrambler.text:
+  path: '/admin/config/development/content-scrambler/text'
+  defaults:
+    _form: '\Drupal\content_scrambler\Form\SettingsForm'
+    _title: 'Replacement text'
+  requirements:
+    _permission: 'administer content scrambler'
+
 content_scrambler.field:
   path: '/admin/config/development/content-scrambler/field'
   defaults:
